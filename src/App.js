@@ -3,49 +3,28 @@ import "./scss/app.scss"
 
 // Components
 import Header from "./components/Header";
-import Categories from "./components/Categories";
-import Sort from "./components/Sort";
-import PizzaBlock from "./components/PizzaBlock";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import Cart from "./pages/Cart";
 
-// Hooks
-import { useState } from "react";
-import { useEffect } from "react";
-
-// Mocks
-import pizzaItems from './assets/pizzas.json'
+// Utilites
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
 
 
 function App() {
-  const [pizzas, setPizzas] = useState([]);
-
-  useEffect(() => {
-    fetch('https://api.mockfly.dev/mocks/3671a684-7221-435a-bec8-c83e01fe27d2/pizzas')
-      .then(response => {
-        return response.json()
-      })
-      .then(json => {
-        setPizzas(json)
-      });
-  }, []);
-
   return (
     <div className="wrapper">
       <Header />
       <div className="content">
         <div className="container">
-          <div className="content__top">
-            <Categories />
-            <Sort />
-          </div>
-          <h2 className="content__title">Все пиццы</h2>
-          <div className="content__items">
-            {pizzas.map(obj => (
-              <PizzaBlock
-                key={obj.id}
-                {...obj}
-              />
-            ))}
-          </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
         </div>
       </div>
     </div>
