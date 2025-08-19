@@ -1,16 +1,15 @@
 // Styles
-import "./scss/app.scss"
+import "./scss/app.scss";
 
 // Components
 import Header from "./components/Header";
+import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import Cart from "./pages/Cart";
 
 // Utilites
 import {
-  Routes,
-  Route,
+  Route, Routes
 } from "react-router-dom";
 
 

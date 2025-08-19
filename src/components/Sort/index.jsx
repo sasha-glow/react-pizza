@@ -1,3 +1,7 @@
+// Styles
+import styles from './styles.module.scss'
+
+// Hooks
 import { useState } from "react";
 
 
@@ -17,8 +21,9 @@ function Sort() {
   }
 
   return (
-    <div className="sort">
-      <div className="sort__label">
+    <div className={styles.sort}>
+      <div className={styles.label}>
+        {/* TODO: fix svg, move into assets */}
         <svg
           width="10"
           height="6"
@@ -38,13 +43,13 @@ function Sort() {
           {sortCategories[activeCategory]}
         </span>
       </div>
-      {isOpen && <div className="sort__popup">
+      {isOpen && <div className={styles.popup}>
         <ul>
           {sortCategories.map((category, index) => (
             <li
               key={category}
               onClick={() => onSelectCategory(index)}
-              className={activeCategory === index ? 'active' : ''}
+              className={activeCategory === index ? styles.active : ''}
             >
               {category}
             </li>

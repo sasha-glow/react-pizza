@@ -1,6 +1,11 @@
 @use "../../scss/libs/normalize" as *;
 @import "../../scss/variables";
 
+.pizzaBlockWrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .pizzaBlock {
   width: 280px;
   text-align: center;
