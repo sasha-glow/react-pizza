@@ -1,16 +1,19 @@
-import React from "react";
+// Styles
+import styles from './styles.module.scss'
+
+// Components
 import { Link } from "react-router-dom";
 
-// images
+// Images
 import pizzaLogo from '../../assets/img/pizza-logo.svg'
 
 
 function Header() {
   return (
-    <div className="header">
-      <div className="container">
+    <div className={styles.header}>
+      <div className={styles.container}>
         <Link to="/">
-          <div className="header__logo">
+          <div className={styles.logo}>
             <img width="38" src={pizzaLogo} alt="Pizza logo" />
             <div>
               <h1>React Pizza</h1>

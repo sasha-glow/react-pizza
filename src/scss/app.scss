@@ -23,9 +23,15 @@ body {
   }
 
   &__items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0.125rem;
+    grid-row-gap: 0.125rem;
+
+    @media(max-width: 1400px) {
+      grid-template-columns: repeat(3, 1fr);
+    } 
   }
 
   &__top {

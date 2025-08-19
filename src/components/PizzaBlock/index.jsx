@@ -1,3 +1,8 @@
+// Styles
+import clsx from 'clsx';
+import styles from './styles.module.scss'
+
+// Hooks
 import { useState } from "react";
 
 
@@ -14,33 +19,31 @@ function PizzaBlock({
 
 
   return (
-    <div className="pizza-block">
+    <div className={styles.pizzaBlock}>
       <img
-        className="pizza-block__image"
+        className={styles.image}
         src={imageUrl}
         alt="Pizza"
       />
-      <h4 className="pizza-block__title">{title}</h4>
-      <div className="pizza-block__selector">
-        <ul>
-          {
-            types.map((type, index) => (
-              <li
-                key={type}
-                className={activeType === index ? 'active' : ''}
-                onClick={() => setActiveType(index)}
-              >
-                {pizzaTypes[type]}
-              </li>
-            ))
-          }
+      <h4 className={styles.title}>{title}</h4>
+      <div className={styles.selector}>
+        <ul className={styles.list}>
+          {types.map((type, index) => (
+            <li
+              key={type}
+              className={clsx({ [styles.active]: activeType === index })}
+              onClick={() => setActiveType(index)}
+            >
+              {pizzaTypes[type]}
+            </li>
+          ))}
         </ul>
-        <ul>
+        <ul className={styles.list}>
           {
             sizes.map((size, index) => (
               <li
                 key={size}
-                className={activeSize === index ? 'active' : ''}
+                className={clsx({ [styles.active]: activeSize === index })}
                 onClick={() => setActiveSize(index)}
               >
                 {size} см.
@@ -49,8 +52,8 @@ function PizzaBlock({
           }
         </ul>
       </div>
-      <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от {price} ₽</div>
+      <div className={styles.bottom}>
+        <div className={styles.price}>от {price} ₽</div>
         <button
           className="button button--outline button--add"
         >
