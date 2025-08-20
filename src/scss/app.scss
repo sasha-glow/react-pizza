@@ -1,6 +1,6 @@
-@import './variables';
-@import './libs/normalize';
-@import './components/all';
+@import "./variables";
+@import "./libs/normalize";
+@import "./components/all";
 
 body {
   background-color: $background;
@@ -13,6 +13,11 @@ body {
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1400px;
+
+  @media (max-width: 680px) {
+    width: calc(100vw - 2rem);
+    margin-top: 1rem;
+  }
 }
 
 .content {
@@ -31,13 +36,13 @@ body {
 
   //   @media(max-width: 1400px) {
   //     grid-template-columns: repeat(3, 1fr);
-  //   } 
+  //   }
   //   @media(max-width: 1060px) {
   //     grid-template-columns: repeat(2, 1fr);
-  //   } 
+  //   }
   //   @media(max-width: 730px) {
   //     grid-template-columns: repeat(1, 1fr);
-  //   } 
+  //   }
   // }
 
   // &__top {
@@ -51,7 +56,7 @@ body {
   //     .sort {
   //       margin-bottom: 30px;
   //     }
-  //   } 
+  //   }
   // }
 }
 

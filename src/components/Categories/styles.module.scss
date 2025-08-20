@@ -2,12 +2,16 @@
 @import "../../scss/variables";
 
 .categories {
+
   ul {
     display: flex;
+    flex-wrap: wrap;
   }
 
   @media (max-width: 1300px) {
     margin-top: 2rem;
+    align-items: center;
+    overflow: scroll;
   }
 }
 
